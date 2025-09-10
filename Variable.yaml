@@ -2,7 +2,6 @@
   hosts: web
   vars:
     name: "Ramya"
-  become: yes #for excute sudo commands
   
   tasks:
   - name: variable
