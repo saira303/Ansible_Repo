@@ -10,7 +10,8 @@
 
 
   - name: run nginx
-    anisble.builtin.service:
+    #anisble.builtin.service:
+    ansible.builtin.service:
       name: nginx
       state: started
       enabled: yes
