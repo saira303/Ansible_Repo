@@ -1,6 +1,6 @@
 - name: using variable 
   hosts: web
-  var:
+  vars:
     name: "Ramya"
   become: yes #for excute sudo commands
   
