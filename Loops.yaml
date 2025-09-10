@@ -11,7 +11,7 @@
     anisble.bulitin.package:
       name: "{{item}}" #item is reserved key word
       state: prasent
-    loop:
+  loop:
     - mysql
     - nginx
     - python
