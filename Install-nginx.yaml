@@ -3,7 +3,7 @@
   become: yes
   tasks: 
   - name: install nginx
-    anisble.builtin.packages: #modules
+    anisble.builtin.package: #modules
       name: nginx
       status: prasent
 
