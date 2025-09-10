@@ -1,0 +1,15 @@
+- name: nginx install and run
+  hosts: web
+  become: yes
+  tasks: 
+  - name: install nginx
+    anisble.builtin.packages: #modules
+      name: nginx
+      status: prasent
+
+
+  - name: run nginx
+    anisble.builtin.service:
+      name: nginx
+      state: started
+      enabled: yes
