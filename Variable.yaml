@@ -8,5 +8,5 @@
 
   tasks:
     - name: using varsibles
-      anisble.builtin.debug:
+      ansible.builtin.debug:
         msg: "Hi, i'm learning {{couser}}, duration is{{Duration}},tariner{{tariner}}"
