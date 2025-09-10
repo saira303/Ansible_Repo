@@ -1,5 +1,4 @@
 - name: using variables
-  hosts: web
   vars: 
     couser: "Devops"
     tariner: "Siva"
