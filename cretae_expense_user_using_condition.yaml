@@ -1,0 +1,18 @@
+- name:
+  hosts: web
+  become: yes
+
+
+  tasks:
+  - name: check if user exist or not
+    anisble.bulitin.command: id expence #anisble.bulitin.command module for run linux commands
+    register: USER # here USER is variable that get o/p from above command
+    ignore_error: true #error hadling
+
+  - name: print the user information
+    anisble.bulitin.debug:
+      msg: "User info :{{USER}}"
+
+  - name: creating user if not exist
+    ansible.bulitin.command: useradd expence
+    when: USER != 0

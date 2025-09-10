@@ -1,0 +1,14 @@
+- name: loops demo
+  hosts: web
+  become: yes
+
+
+  tasks:
+  - name: installing packages
+    anisble.bulitin.package:
+      name: :{{item}} #item is reserved key word
+      state: prasent
+    loop:
+    - mysql
+    - nginx
+    - python
