@@ -1,9 +1,9 @@
 - name: using variable 
   hosts: web
   vars:
-    name: "Ramya"
+    person: "Ramya"
   
   tasks:
   - name: variable
     ansible.builtin.debug:
-      msg: "Hi {{name}}"
+      msg: "Hi {{person}}"
