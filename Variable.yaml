@@ -1,9 +1,12 @@
-- name: using variable 
+- name: using variables
   hosts: web
-  vars:
-    person: "Ramya"
-  
+  vars: 
+    couser: "Devops"
+    tariner: "Siva"
+    Duration: "120HRS"
+
+
   tasks:
-  - name: variable
-    ansible.builtin.debug:
-      msg: "Hi {{person}}"
+    - name: using varsibles
+      anisble.builtin.dubug:
+        msg: "Hi, i'm learning {{couser}}, duration is{{Duration}},tariner{{tariner}}"
