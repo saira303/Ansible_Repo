@@ -1,12 +1,15 @@
 - name: loops demo
   hosts: web
   become: yes
-
+  tasks:
+  # - name: Installing packages
+  #   ansible.bulitin.package:
+  #     name:
 
   tasks:
     - name: installing packages
       anisble.bulitin.package:
-        name: :{{item}} #item is reserved key word
+        name: {{item}} #item is reserved key word
         state: prasent
         loop:
         - mysql
