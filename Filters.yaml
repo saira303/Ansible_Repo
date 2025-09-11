@@ -1,0 +1,38 @@
+- name: filters/functions demo
+  host: loacl
+  connection: loacl
+
+
+  tasks:
+  - name: print the default varaiable
+    ansible.builtin.debug:
+      msg: "hello {{ Name , default('SaiRa') }}"
+
+  - name: covert to UPPER CASE and LOWER CASE
+    vars: 
+      greeting : "Hello SaiRa"
+    ansible.builtin.debug:
+      msg: " Uppeer: {{ greeting | uppercase}}, Lower: {{ greeting | uppercase}}"
+
+  - name: get the unique number, max and min
+    vars:
+      numbers: [1,2,3,4,4,3,2,1]
+    ansible.builtin.debug:
+      msg: "{{ numbers | unique }}, {{numbers | max}}, {{numbers | min}}"
+
+  - name: conecting dictonary to list
+    vars:
+      course: 
+        name: "Devops"
+        duration: 120
+        triner: "Sivakumar"
+    ansible.builtin.debug:
+      msg: "{{ course | dict2item}}"
+
+  - name:
+    vars:
+      course:
+      - {"key": name,"valu": Devops }
+      - {"key": duration,"valu": 120 }
+      - {"key": triner,"valu": sivakumar }
+
