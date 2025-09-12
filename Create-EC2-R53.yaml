@@ -2,21 +2,21 @@
   hosts: local
   connection: local
   vars:
-    subnet_id: 
-    sg_id:
-    ami_id: 
+    subnet_id: subnet-0fd783259ba48c87f
+    sg_id: sg-0996da6f4be0f2efc
+    ami_id: ami-0ae0a4f69bf1ea649
     instances:
-      - mysql
-      - backend
-      - frontend
+    - mysql
+    - backend
+    - frontend
 
   tasks: 
   - name: create ec2 instances
     amazon.aws.ec2_instance:
     name: "{{ iteam }}"
-    vpc_subnet_id: 
-    instance_type: 
-    security_group: 
+    vpc_subnet_id: "{{ subnet_id }}"
+    instance_type: "{{ t3.micro }}"
+    security_group: "{{ sg_id }}"
     image_id: 
     tags:
       Environment: creating instance from ansible
