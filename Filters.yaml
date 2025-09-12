@@ -1,6 +1,6 @@
 - name: filters/functions demo
-  host: loacl
-  connection: loacl
+  host: local
+  connection: local
 
 
   tasks:
