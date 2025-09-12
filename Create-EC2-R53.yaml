@@ -7,6 +7,7 @@
     ami_id: ami-0ae0a4f69bf1ea649
     instances:
     - mysql
+    - backend
     
 
   tasks: 
