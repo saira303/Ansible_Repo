@@ -16,7 +16,7 @@
       vpc_subnet_id: "{{ subnet_id }}"
       instance_type: "{{ t3.micro }}"
       security_group: "{{ sg_id }}"
-      image_id: 
+      image_id: "{{ ami_id }}"
     # tags:
     #   Environment: creating instance from ansible
     loop: "{{ instances }}"
