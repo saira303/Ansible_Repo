@@ -1,4 +1,4 @@
-- name: Create EC2 instance and R53
+- name: Create EC2  and R53
   hosts: local
   connection: local
   vars:
@@ -7,17 +7,16 @@
     ami_id: ami-0ae0a4f69bf1ea649
     instances:
     - mysql
-    - backend
-    - frontend
+    
 
   tasks: 
   - name: create ec2 instances
     amazon.aws.ec2_instance:
-    name: "{{ iteam }}"
-    vpc_subnet_id: "{{ subnet_id }}"
-    instance_type: "{{ t3.micro }}"
-    security_group: "{{ sg_id }}"
-    image_id: 
-    tags:
-      Environment: creating instance from ansible
-  loop: "{{ instances }}"
+      name: "{{ iteam }}"
+      vpc_subnet_id: "{{ subnet_id }}"
+      instance_type: "{{ t3.micro }}"
+      security_group: "{{ sg_id }}"
+      image_id: 
+    # tags:
+    #   Environment: creating instance from ansible
+    loop: "{{ instances }}"
