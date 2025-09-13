@@ -8,6 +8,7 @@
     instances:
     - mysql
     - backend
+    - frontend
     
 
   tasks: 
@@ -21,3 +22,33 @@
     # tags:
     #   Environment: creating instance from ansible
     loop: "{{ instances }}"
+    register: ec2_instance
+
+  - name : print the output
+    ansible.builtin.debug:
+      msg: "{{ ec2_instance }}"
+
+  # - name: create r53 record
+  #   amazon.aws.route53:
+  #     state: prasent
+  #     zone: "{{ zone }}"  
+  #     record: "{{ item.item}}.{{zone}}" #msyql.daws81.online
+  #     type: A 
+  #     ttl: 1
+  #     value: "{{ item.instance[0].private_ip_adress}}"
+  #     wait: true
+  #     overwite: true
+  #   loop: "{{ ec2_instance.results }}"
+
+  # - name: create r53 public record
+  #   amazon.aws.route53:
+  #     state: prasent
+  #     zone: "{{ zone }}"  
+  #     record: "{{zone}}" 
+  #     type: A 
+  #     ttl: 1
+  #     value: "{{ item.instance[0].public_ip_adress}}"
+  #     wait: true
+  #     overwite: true
+  #   loop: "{{ ec2_instance.results }}"
+  #   when: item.item == "frontend"
