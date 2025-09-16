@@ -16,3 +16,6 @@
   - name: creating user if not exist
     ansible.bulitin.command: useradd expence
     when: USER != 0
+
+
+    
